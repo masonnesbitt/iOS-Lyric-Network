@@ -12,9 +12,13 @@
 		DD978990217F73EA005FAA6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD97898E217F73EA005FAA6C /* Main.storyboard */; };
 		DD978992217F73EE005FAA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD978991217F73EE005FAA6C /* Assets.xcassets */; };
 		DD978995217F73EE005FAA6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD978993217F73EE005FAA6C /* LaunchScreen.storyboard */; };
+		F887776A1E65BEBE7192FD36 /* Pods_iOS_Lyric_Learner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5D6E474FAA960B4D66ACA2 /* Pods_iOS_Lyric_Learner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F62599BD88BD8613CE27706 /* Pods-iOS Lyric Learner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Lyric Learner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Lyric Learner/Pods-iOS Lyric Learner.debug.xcconfig"; sourceTree = "<group>"; };
+		4DB596993A1E3827342519F6 /* Pods-iOS Lyric Learner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Lyric Learner.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Lyric Learner/Pods-iOS Lyric Learner.release.xcconfig"; sourceTree = "<group>"; };
+		7E5D6E474FAA960B4D66ACA2 /* Pods_iOS_Lyric_Learner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Lyric_Learner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD978987217F73EA005FAA6C /* iOS Lyric Learner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Lyric Learner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD97898A217F73EA005FAA6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD97898C217F73EA005FAA6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F887776A1E65BEBE7192FD36 /* Pods_iOS_Lyric_Learner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		653592F48289B043A4EABD3E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E5D6E474FAA960B4D66ACA2 /* Pods_iOS_Lyric_Learner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1804625A51A961E8F1506DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2F62599BD88BD8613CE27706 /* Pods-iOS Lyric Learner.debug.xcconfig */,
+				4DB596993A1E3827342519F6 /* Pods-iOS Lyric Learner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DD97897E217F73EA005FAA6C = {
 			isa = PBXGroup;
 			children = (
 				DD978989217F73EA005FAA6C /* iOS Lyric Learner */,
 				DD978988217F73EA005FAA6C /* Products */,
+				C1804625A51A961E8F1506DC /* Pods */,
+				653592F48289B043A4EABD3E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD978999217F73EE005FAA6C /* Build configuration list for PBXNativeTarget "iOS Lyric Learner" */;
 			buildPhases = (
+				55BA5F91D2844D2557584C22 /* [CP] Check Pods Manifest.lock */,
 				DD978983217F73EA005FAA6C /* Sources */,
 				DD978984217F73EA005FAA6C /* Frameworks */,
 				DD978985217F73EA005FAA6C /* Resources */,
+				8B49EB1C8F3FA321EBA2455A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		55BA5F91D2844D2557584C22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS Lyric Learner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B49EB1C8F3FA321EBA2455A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Lyric Learner/Pods-iOS Lyric Learner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Lyric Learner/Pods-iOS Lyric Learner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DD978983217F73EA005FAA6C /* Sources */ = {
@@ -280,6 +347,7 @@
 		};
 		DD97899A217F73EE005FAA6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F62599BD88BD8613CE27706 /* Pods-iOS Lyric Learner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +365,7 @@
 		};
 		DD97899B217F73EE005FAA6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB596993A1E3827342519F6 /* Pods-iOS Lyric Learner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
